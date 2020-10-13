@@ -1,0 +1,16 @@
+
+from django.contrib import admin
+from django.urls import path
+from api import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.index, name='home'),
+    path('pilihdokter/cetaksep/',views.cetakSep),
+    path('pilihdokter/',views.pilihDokter),
+    path('bpjs/',views.menuBpjs, name='menuBpjs'),
+    path('registration/',views.registration),
+    # path('rujukan/search/<nomor>/', views.searchRujukan, name='search_rujukan'),
+    path('rujukan/search', views.searchRujukan, name='search_rujukan'),
+    path('referensi/bpjs/poliklinik/search', views.showPoliBpjs, name='show_poli_bpjs'),
+]
